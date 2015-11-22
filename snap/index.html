@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="js/jquery.js"></script>
+        <script src="js/swf.js"></script>
+		<script src="js/script.js"></script>
+        <script src="scriptcam.js"></script>
+		<link rel="stylesheet" href="css/bootstrap.css" />
+    </head>
+    <body>
+	<div class="container-fluid">
+	
+	<!-- 1h sthlh -->
+		<div class="col-md-6 bg-info">
+			<h1>Live Camera</h1>
+			<div class="col-md-10">
+				<div id="webcam"></div>
+			</div>
+			<div class="col-md-6">
+                <select id="cameraNames" size="1" onChange="changeCamera()" style="width:245px;font-size:10px;height:25px;"></select>
+			</div>
+		</div>
+		
+		
+		<!-- 2h sthlh -->
+		<div class="col-md-6">
+			<h1>SnapShot</h1>
+			<div class="col-md-12">
+				<button class="btn btn-primary" id="btn2" onclick="base64_toimage()">Snapshot to image</button>
+			</div>
+			<div class="col-md-12">
+				<img id="image" class="img-responsive"/>
+			</div>
+		</div>
+	</div>
+    </body>
+</html>
+
