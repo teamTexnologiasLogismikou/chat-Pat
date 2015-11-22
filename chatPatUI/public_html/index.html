@@ -1,49 +1,73 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="utf-8">
-<meta content="stuff, to, help, search, engines, not" name="keywords">
-<meta content="What this page is about." name="description">
-<meta content="Display Webcam Stream" name="title">
-<title>Display Webcam Stream</title>
-  
-<style>
-#container {
-    margin: 0px auto;
-    width: 500px;
-    height: 375px;
-    border: 10px #333 solid;
-}
-#videoElement {
-    width: 500px;
-    height: 375px;
-    background-color: #666;
-}
-</style>
+   <meta charset="utf-8" />
+   <title>Registration Form</title>
+   <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+   <link href='http://fonts.googleapis.com/css?family=Roboto:300' rel='stylesheet' type='text/css'>
+   <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+   <style>
+       body{
+           font:12px/15px Roboto, "Helvetica Neue", Helvetica, sans-serif;
+       }
+       select,
+       input,
+       .btn {
+           font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+       }
+       #wrapper{
+           margin:0 auto;
+       }
+       .main-form {
+           width: 360px;
+           min-height: 360px;
+           background: #fff;
+           border-radius: 60px;
+           margin:0px auto 20px;
+           padding: 20px;
+       }
+       .form-logo {
+           font-size: 100px;
+           color: #708090;
+       }
+   </style>
 </head>
-  
 <body>
-<div id="container">
-    <video autoplay="true" id="videoElement">
-     
-    </video>
-</div>
 <script>
-    var video = document.querySelector("#videoElement");
-
-    navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.msGetUserMedia || navigator.oGetUserMedia;
-
-    if (navigator.getUserMedia) {       
-        navigator.getUserMedia({video: true}, handleVideo, videoError);
-    }
-
-    function handleVideo(stream) {
-        video.src = window.URL.createObjectURL(stream);
-    }
-
-    function videoError(e) {
-        // do something
-    }
+function newAccount() {
+   var firstName = document.getElementById("firstname").value;
+   var lastName = document.getElementById("lastname").value;
+   var email = document.getElementById("email").value;
+   // Call Java callback function and pass text fields values.
+   onCreateAccount(firstName, lastName, email);
+}
 </script>
+<div id="wrapper">
+   <div class="main-form">
+       <form action="#" method="POST">
+           <fieldset>
+               <div class="text-center">
+                   <span class="form-logo glyphicon glyphicon-user"></span>
+               </div>
+               <div class="form-body">
+                   <h1 class="form-title text-center">New Account</h1>
+                   <div class="form-group">
+                       <input class="form-control" type="text" id="firstname" name="firstname" placeholder="First Name">
+                   </div>
+                   <div class="form-group">
+                       <input class="form-control" type="text" id="lastname" name="surname" placeholder="Last Name">
+                   </div>
+                   <div class="form-group">
+                       <input class="form-control" type="email" id="email" name="email" placeholder="Email">
+                   </div>
+                   <div class="form-group text-center">
+                       <button class="btn btn-default btn-lg" type="button" onclick="newAccount();">New Account</button>
+                   </div>
+               </div>
+           </fieldset>
+       </form>
+   </div>
+</div>
 </body>
 </html>
