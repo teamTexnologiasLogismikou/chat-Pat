@@ -2,7 +2,7 @@
 <html>
 <head>
    <meta charset="utf-8" />
-   <title>Login</title>
+   <title>Register</title>
    <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
    <link href='http://fonts.googleapis.com/css?family=Roboto:300' rel='stylesheet' type='text/css'>
    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
@@ -35,11 +35,13 @@
 </head>
 <body>
 <script>
-function Login() {
+function newAccount() {
+   var firstName = document.getElementById("firstname").value;
+   var lastName = document.getElementById("lastname").value;
    var email = document.getElementById("email").value;
    var password = document.getElementById("password").value;
    // Call Java callback function and pass text fields values.
-   onCreateAccount(email, password);
+   onCreateAccount(firstName, lastName, email);
 }
 </script>
 <div id="wrapper">
@@ -50,7 +52,13 @@ function Login() {
                    <span class="form-logo glyphicon glyphicon-user"></span>
                </div>
                <div class="form-body">
-                   <h1 class="form-title text-center">Welcome</h1>
+                   <h1 class="form-title text-center">New Account</h1>
+                   <div class="form-group">
+                       <input class="form-control" type="text" id="firstname" name="firstname" placeholder="First Name">
+                   </div>
+                   <div class="form-group">
+                       <input class="form-control" type="text" id="lastname" name="surname" placeholder="Last Name">
+                   </div>
                    <div class="form-group">
                        <input class="form-control" type="email" id="email" name="email" placeholder="Email">
                    </div>
@@ -58,7 +66,7 @@ function Login() {
                        <input class="form-control" type="password" id="password" name="password" placeholder="Password">
                    </div>
                    <div class="form-group text-center">
-                       <button class="btn btn-default btn-lg" type="button" onclick="Login();">Login</button>
+                       <button class="btn btn-default btn-lg" type="button" onclick="newAccount();">New Account</button>
                    </div>
                </div>
            </fieldset>
