@@ -47,7 +47,6 @@
     <div class="wrapper">
     <button id="startbutton">chatPat!</button>
     <button id="deletebutton"> <a href="">Delete</a></button>
-    <button id="btn-download"><a href="#" class="button" id="btn-download" download="my-file-name.png">Recieve photo</a></button>
     </div>
     
     <div id="container2">
@@ -65,12 +64,6 @@
       startbutton  = document.querySelector('#startbutton'),
       width = 320,
       height = 0;
-      
-      var button = document.getElementById('btn-download');
-        button.addEventListener('click', function (e) {
-            var dataURL = canvas.toDataURL('image/png');
-            button.href = dataURL;
-    });
 
   navigator.getMedia = ( navigator.getUserMedia ||
                          navigator.webkitGetUserMedia ||
