@@ -11,7 +11,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
     </head>
-    <body background="chat2.jpg">
+    <body background="images/chat2.jpg">
         <br/><br/><br/><br/>
         <h1><font color="white">This Web Created by: </font></h1>
         <a href="https://www.facebook.com/n30r39" style="margin-left: 100px;">Σάββας Φιλιππίδης</a><br/><br/>
