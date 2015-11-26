@@ -6,10 +6,10 @@
 </head> 
 <body>
 <%
-    String fname = request.getParameter("fname");
-    String lname = request.getParameter("lname");
-    String email = request.getParameter("email");
-    String password = request.getParameter("password");
+     String fname = request.getParameter("fname");
+     String lname = request.getParameter("lname");
+     String email = request.getParameter("email");
+     String password = request.getParameter("password");
     
 try {
     String connectionURL = "jdbc:mysql://localhost:3306/register";
