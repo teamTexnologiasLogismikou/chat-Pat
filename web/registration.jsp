@@ -1,6 +1,6 @@
 <%@ page import="java.sql.*" %> 
 <%@ page import="java.io.*" %> 
-<html> 
+<html>  
 <head> 
 <title>Registered</title>
 </head> 
