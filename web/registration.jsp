@@ -5,7 +5,7 @@
 <title>Registered</title>
 </head> 
 <body>
-<% 
+<%
     String fname = request.getParameter("fname");
     String lname = request.getParameter("lname");
     String email = request.getParameter("email");
