@@ -1,5 +1,5 @@
 <html> 
-    <head> 
+    <head>  
         <title>JSP Page</title> 
     </head>
     <body> 

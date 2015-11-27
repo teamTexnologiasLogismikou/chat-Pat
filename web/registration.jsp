@@ -15,7 +15,7 @@ try {
     String connectionURL = "jdbc:mysql://localhost:3306/register";
     Connection connection = null; 
     Class.forName("com.mysql.jdbc.Driver").newInstance(); 
-    connection = DriverManager.getConnection(connectionURL, "root", "root");
+    connection = DriverManager.getConnection(connectionURL, "root", "");
     if(!connection.isClosed())
         connection.createStatement();
     Statement st = connection.createStatement();
