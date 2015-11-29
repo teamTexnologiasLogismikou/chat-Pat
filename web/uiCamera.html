@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>  
+<head>
+<meta charset="utf-8">
+<title>ChatPat </title> 
+<style>
+#container { 
+    margin: 100px auto;
+    width: 500px;
+    height: 375px;
+    border: 10px #333 solid;
+}
+#video {
+    width: 500px;
+    height: 375px;
+    background-color: #666;
+}
+
+#container2 {
+    margin: 100px auto;
+    width: 500px;
+    height: 375px;
+    border: 10px #333 solid;
+}
+#canvas {
+    width: 500px;
+    height: 375px;
+    background-color: #666;
+}
+
+
+.wrapper {
+    text-align: center;
+    
+}
+
+
+
+</style>
+</head>
+  
+<body>
+    <div id="container">
+        <video id="video"></video>
+    </div>
+    
+    <div class="wrapper">
+    <button id="startbutton">chatPat!</button>
+    <button id="deletebutton"> <a href="">Delete</a></button>
+    <button id="btn-download"> <a href="#" class="button" id="btn-download" download="my-file-name.png">Recieve</a></button>
+    </div>
+    
+    <div id="container2">
+        <canvas id="canvas"></canvas>
+    </div>
+    
+<!--<img id="photo" alt="photo">-->
+<script id="jsbin-javascript">
+(function() {
+
+  var streaming = false,
+      video        = document.querySelector('#video'),
+      canvas       = document.querySelector('#canvas'),
+      photo        = document.querySelector('#photo'),
+      startbutton  = document.querySelector('#startbutton'),
+      width = 320,
+      height = 0;
+
+var button = document.getElementById('btn-download');
+        button.addEventListener('click', function (e) {
+            var dataURL = canvas.toDataURL('image/png');
+            button.href = dataURL;
+    });
+  navigator.getMedia = ( navigator.getUserMedia ||
+                         navigator.webkitGetUserMedia ||
+                         navigator.mozGetUserMedia ||
+                         navigator.msGetUserMedia);
+
+  navigator.getMedia(
+    {
+      video: true,
+      audio: false
+    },
+    function(stream) {
+      if (navigator.mozGetUserMedia) {
+        video.mozSrcObject = stream;
+      } else {
+        var vendorURL = window.URL || window.webkitURL;
+        video.src = vendorURL.createObjectURL(stream);
+      }
+      video.play();
+    },
+    function(err) {
+      console.log("An error occured! " + err);
+    }
+  );
+
+  video.addEventListener('canplay', function(ev){
+    if (!streaming) {
+      height = video.videoHeight / (video.videoWidth/width);
+      video.setAttribute('width', width);
+      video.setAttribute('height', height);
+      canvas.setAttribute('width', width);
+      canvas.setAttribute('height', height);
+      streaming = true;
+    }
+  }, false);
+
+  function takepicture() {
+    canvas.width = width;
+    canvas.height = height;
+    canvas.getContext('2d').drawImage(video, 0, 0, width, height);
+    var data = canvas.toDataURL('image/png');
+    photo.setAttribute('src', data);
+  }
+
+  startbutton.addEventListener('click', function(ev){
+      takepicture();
+    ev.preventDefault();
+  }, false);
+
+})();
+</script>
+</body>
+</html> 
