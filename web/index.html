@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset="utf-8" />
+   <title>Chat-Pat</title>
+   <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+   <link href='http://fonts.googleapis.com/css?family=Roboto:300' rel='stylesheet' type='text/css'>
+   <style>
+       body{
+           font:12px/15px Roboto, "Helvetica Neue", Helvetica, sans-serif;
+       }
+       select,
+       input,
+       .btn {
+           font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+       }
+       #wrapper{
+           margin:0 auto;
+       }
+       .main-form {
+           width: 360px;
+           min-height: 360px;
+           background: #fff;
+           border-radius: 60px;
+           margin:0px auto 20px;
+           padding: 20px;
+       }
+       .form-logo {
+           font-size: 100px;
+           color: #708090;
+       }
+   </style>
+</head>
+<body background="images/chat2.jpg">
+<div id="wrapper">
+   <div class="main-form">
+       <form action="LoginCheck.jsp" method="POST">
+           <fieldset>
+               <div class="text-center">
+                   <span><img src="images/chat1.jpg" width="95%" height="100%"></span>
+               </div>
+               <br/>
+               <div class="form-body">
+                   <div class="form-group">
+                       <input class="form-control" type="email" id="email" name="email" placeholder="Email">
+                   </div>
+                   <div class="form-group">
+                       <input class="form-control" type="password" id="password" name="password" placeholder="Password">
+                   </div>
+                       <button class="btn btn-default btn-lg text-left" type="button" onclick=window.location.href="register.html">Register</button>
+                       <button style="margin-left: 137px" class="btn btn-default btn-lg text-right" type="submit">Login</button>
+                   </div>
+               </div>
+           </fieldset>
+       </form>
+   </div>
+</div>
+</body>
+</html> 
